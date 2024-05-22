@@ -1,0 +1,97 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  font-family: 'Arial', sans-serif;
+  text-align: center; /* Căn giữa nội dung */
+  overflow: hidden; /* Ẩn phần thừa ngoài khung nhìn */
+}
+
+#envelopeContainer {
+  perspective: 1000px; /* Để thực hiện hiệu ứng 3D */
+}
+
+#envelope {
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+#letter {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  cursor: pointer;
+}
+
+#letter.hidden {
+  display: none;
+}
+
+#letter .content {
+  max-width: 300px;
+  margin: auto;
+}
+
+#cake {
+  height: 150px;
+  margin-top: 20px;
+}
+
+button {
+  display: block; /* Đặt nút trên một dòng riêng */
+  width: 100%; /* Đặt chiều rộng của nút chiếm toàn bộ chiều rộng của phần tử cha */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #ff6f61;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 20px; /* Thêm khoảng cách trên */
+  text-align: center; /* Căn giữa văn bản trong nút */
+}
+
+button:hover {
+  background: #ff8566;
+}
+
+#fireworksContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Để không cản trở tương tác người dùng */
+  overflow: hidden; /* Ẩn phần thừa ngoài khung nhìn */
+}
+
+.firework {
+  position: absolute;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  border-radius: 50%;
+  transform-origin: center bottom;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  will-change: transform, opacity;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="envelopeContainer">
+        <img id="envelope" src="./assets/img/envelope.png" alt="Envelope" onclick="openEnvelope()">
+    </div>
+    <div id="letter" class="hidden" onclick="triggerFireworks()">
+        <div class="content">
+            <h1>Happy Birthday!</h1>
+            <p>Chúc bạn một ngày sinh nhật vui vẻ và hạnh phúc!</p>
+            <img id="cake" src="./assets/img/cake.png" alt="Birthday Cake">
+            <button id="toggleMusicBtn" onclick="toggleMusic(event)">Pause Music</button>
+        </div>
+    </div>
+    <div id="fireworksContainer"></div>
+    <audio id="birthdaySong" src="./assets/audio/HIEUTHUHAI  SINH NHT prod by Wonderlust.mp3"></audio>
+    <script src="./script.js"></script>
+</body>
+</html>
