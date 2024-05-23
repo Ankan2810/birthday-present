@@ -136,3 +136,43 @@ button:hover {
   border-radius: 50%;
   will-change: transform, opacity;
 }
+
+@media (max-width: 768px) {
+  #envelope {
+      width: 150px;
+  }
+
+  #letter {
+      width: 80%;
+      padding: 15px;
+  }
+
+  #cake {
+      height: 120px;
+  }
+
+  button {
+      width: 90%;
+      padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  #envelope {
+      width: 120px;
+  }
+
+  #letter {
+      width: 90%;
+      padding: 10px;
+  }
+
+  #cake {
+      height: 100px;
+  }
+
+  button {
+      width: 90%;
+      padding: 6px 10px;
+  }
+}
