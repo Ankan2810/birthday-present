@@ -6,12 +6,12 @@ body {
   margin: 0;
   background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
   font-family: 'Arial', sans-serif;
-  text-align: center; /* Căn giữa nội dung */
-  overflow: hidden; /* Ẩn phần thừa ngoài khung nhìn */
+  text-align: center;
+  overflow: hidden;
 }
 
 #envelopeContainer {
-  perspective: 1000px; /* Để thực hiện hiệu ứng 3D */
+  perspective: 1000px;
 }
 
 #envelope {
@@ -45,13 +45,54 @@ body {
 }
 
 #cake {
+  position: relative;
   height: 150px;
   margin-top: 20px;
 }
 
+#cakeContainer {
+  position: relative;
+  display: inline-block;
+}
+
+#candle {
+  position: absolute;
+  top: 5%; /* Đặt ngọn nến trên bánh kem */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#candleFlame {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 30px;
+  background: linear-gradient(to bottom, rgba(255, 255, 0, 0.8), rgba(255, 69, 0, 0.8));
+  border-radius: 50%;
+  animation: flicker 0.2s infinite;
+}
+
+#candleBody {
+  width: 10px;
+  height: 40px;
+  background: lightsalmon;
+  border-radius: 2px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes flicker {
+  0%, 100% { transform: translateX(-50%) scaleY(1); }
+  50% { transform: translateX(-50%) scaleY(1.1); }
+}
+
 button {
-  display: block; /* Đặt nút trên một dòng riêng */
-  width: 100%; /* Đặt chiều rộng của nút chiếm toàn bộ chiều rộng của phần tử cha */
+  display: block;
+  width: 100%;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -59,8 +100,8 @@ button {
   color: white;
   cursor: pointer;
   transition: background 0.3s;
-  margin-top: 20px; /* Thêm khoảng cách trên */
-  text-align: center; /* Căn giữa văn bản trong nút */
+  margin-top: 20px;
+  text-align: center;
 }
 
 button:hover {
@@ -73,8 +114,8 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* Để không cản trở tương tác người dùng */
-  overflow: hidden; /* Ẩn phần thừa ngoài khung nhìn */
+  pointer-events: none;
+  overflow: hidden;
 }
 
 .firework {

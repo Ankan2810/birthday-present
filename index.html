@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthdayyyyy</title>
     <link rel="stylesheet" href="./style.css">
-	<link rel="icon" type="image/jpg" href="./assets/img/cake.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png" />
 
 </head>
 <body>
@@ -14,9 +15,15 @@
     </div>
     <div id="letter" class="hidden" onclick="triggerFireworks()">
         <div class="content">
-            <h1>Happy Birthday!</h1>
+            <h1>Happy Birthday</h1>
             <p>Chúc bạn (đời) sinh nhật vui vẻ và hạnh phúc bên gia đình nhoeeee. Thêm tủi mới thì +1 tự tin và -(n+1) tự ti (Tuôi mà thấy không làm được thì +1 đấm)</p>
-            <img id="cake" src="./assets/img/cake.png" alt="Birthday Cake">
+            <div id="cakeContainer">
+                <div id="candle">
+                    <div id="candleFlame"></div>
+                    <div id="candleBody"></div>
+                </div>
+                <img id="cake" src="./assets/img/cake.png" alt="Birthday Cake">
+            </div>
             <button id="toggleMusicBtn" onclick="toggleMusic(event)">Pause Music</button>
         </div>
     </div>

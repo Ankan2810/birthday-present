@@ -8,6 +8,7 @@ function openEnvelope() {
       envelope.style.display = 'none';
       letter.classList.remove('hidden');
       birthdaySong.play();
+      startMicrophone();
   }, 600); // Thời gian khớp với thời gian chuyển đổi CSS
 }
 
@@ -95,3 +96,37 @@ document.getElementById('letter').addEventListener('click', function(event) {
       closeEnvelope();
   }
 });
+
+function startMicrophone() {
+  navigator.mediaDevices.getUserMedia({ audio: true })
+      .then(stream => {
+          const audioContext = new AudioContext();
+          const source = audioContext.createMediaStreamSource(stream);
+          const analyser = audioContext.createAnalyser();
+          source.connect(analyser);
+          analyser.fftSize = 2048;
+
+          const bufferLength = analyser.frequencyBinCount;
+          const dataArray = new Uint8Array(bufferLength);
+
+          const detectBlow = () => {
+              analyser.getByteFrequencyData(dataArray);
+              const average = dataArray.reduce((acc, val) => acc + val, 0) / bufferLength;
+              const threshold = 43;
+
+              if (average > threshold) {
+                  turnOffTheCandle();
+              }
+          };
+
+          setInterval(detectBlow, 100);
+      })
+      .catch(error => {
+          console.error("Error accessing microphone:", error);
+      });
+}
+
+function turnOffTheCandle() {
+  const candleFlame = document.getElementById('candleFlame');
+  candleFlame.style.display = 'none';
+}
