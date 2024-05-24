@@ -137,6 +137,37 @@ button:hover {
   will-change: transform, opacity;
 }
 
+.balloon {
+  position: fixed;
+  width: 40%;
+  animation: float 6s ease-in-out infinite;
+  z-index: 0; /* Make sure balloons are behind the envelope and letter */
+}
+
+.balloon img {
+  width: 100%;
+}
+
+.balloon-bottom-left {
+  bottom: -10%;
+  left: -10%;
+}
+
+.balloon-bottom-right {
+  bottom: -15%;
+  right: -10%;
+}
+
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-20px);
+  }
+}
+
+
 @media (max-width: 768px) {
   #envelope {
       width: 150px;
@@ -154,8 +185,25 @@ button:hover {
   button {
       width: 90%;
       padding: 8px 15px;
+      margin-left: 5%
+
+  }
+
+  .balloon {
+    width: 40%;
+  }
+
+  .balloon-bottom-right {
+    bottom: -20%;
+    right: -15%;
+  }
+
+  .balloon-bottom-left {
+    bottom: -20%;
+    left: -15%;
   }
 }
+
 
 @media (max-width: 480px) {
   #envelope {
@@ -174,5 +222,18 @@ button:hover {
   button {
       width: 90%;
       padding: 6px 10px;
+      margin-left: 5%
+  }
+  .balloon {
+    width: 50%;
+  }
+  .balloon-bottom-right {
+    bottom: -20%;
+    right: -15%;
+  }
+
+  .balloon-bottom-left {
+    bottom: -20%;
+    left: -15%;
   }
 }
