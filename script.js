@@ -80,3 +80,12 @@ function turnOffTheCandle() {
   const candleFlame = document.getElementById('candleFlame');
   candleFlame.style.display = 'none';
 }
+
+function relightCandle(event){
+  event.stopPropagation(); // Ngăn chặn sự kiện đóng thư
+  const candleFlame = document.getElementById('candleFlame');
+    if (candleFlame.style.display === 'none') {
+        candleFlame.style.display = 'block';
+    }
+}
+
