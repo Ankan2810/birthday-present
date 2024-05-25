@@ -45,6 +45,7 @@ body {
 }
 
 #cake {
+  z-index: 1;
   position: relative;
   height: 150px;
   margin-top: 20px;
@@ -56,6 +57,7 @@ body {
 }
 
 #candle {
+  z-index: 0;
   position: absolute;
   top: 5%; /* Đặt ngọn nến trên bánh kem */
   left: 50%;
