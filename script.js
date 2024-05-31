@@ -101,9 +101,3 @@ function relightCandle(event){
         candleFlame.style.display = 'block';
     }
 }
-
-onload = () => { 
-  const birthdaySong = document.getElementById('birthdaySong');
-  birthdaySong.play();
-
-}
