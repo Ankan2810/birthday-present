@@ -150,6 +150,18 @@ button:hover {
   right: -10%;
 }
 
+.hidden{
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+  .visible {
+    display: block;
+    opacity: 1;
+  }
+  
+
 @keyframes float {
   0%, 100% {
       transform: translateY(0);

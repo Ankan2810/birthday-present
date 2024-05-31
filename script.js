@@ -2,6 +2,9 @@ function openEnvelope() {
   const envelope = document.getElementById('envelope');
   const letter = document.getElementById('letter');
   const birthdaySong = document.getElementById('birthdaySong');
+  const balloon1 = document.getElementById('lBalloon');
+  const balloon2 = document.getElementById('rBalloon');
+
 
   envelope.style.transform = 'rotateY(180deg)';
   setTimeout(() => {
@@ -9,16 +12,26 @@ function openEnvelope() {
       letter.classList.remove('hidden');
       birthdaySong.play();
       startMicrophone();
+      balloon1.classList.remove('hidden');
+      balloon2.classList.remove('hidden');
+      balloon1.classList.add('visible');
+      balloon2.classList.add('visible');
   }, 600); // Thời gian khớp với thời gian chuyển đổi CSS
+
 }
 
 function closeEnvelope() {
   const envelope = document.getElementById('envelope');
   const letter = document.getElementById('letter');
   const birthdaySong = document.getElementById('birthdaySong');
+  const balloon1 = document.getElementById('lBalloon');
+  const balloon2 = document.getElementById('rBalloon');
+  balloon1.classList.remove('visible');
+  balloon2.classList.remove('visible');
+  balloon1.classList.add('hidden');
+  balloon2.classList.add('hidden');
 
   birthdaySong.pause();
-  birthdaySong.currentTime = 0;
   letter.classList.add('hidden');
   envelope.style.display = 'block';
   setTimeout(() => {
@@ -89,3 +102,8 @@ function relightCandle(event){
     }
 }
 
+onload = () => { 
+  const birthdaySong = document.getElementById('birthdaySong');
+  birthdaySong.play();
+
+}
