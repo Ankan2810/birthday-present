@@ -3,6 +3,7 @@ onload = () => {
   birthdaySong.volume = 0.2;
   birthdaySong.play();
 };
+
 function openEnvelope() {
   const envelope = document.getElementById('envelope');
   const letter = document.getElementById('letter');
