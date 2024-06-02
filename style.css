@@ -143,11 +143,18 @@ button:hover {
 .balloon-bottom-left {
   bottom: -10%;
   left: -10%;
+  animation: 
+    flyUp 4s ease-in-out 0s 1 forwards, /* Animation 1 */
+    float 6s ease-in-out 4s infinite;  /* Animation 2 */
 }
+
 
 .balloon-bottom-right {
   bottom: -15%;
   right: -10%;
+  animation: 
+    flyUp 4s ease-in-out 0s 1 forwards, /* Animation 1 */
+    float 6s ease-in-out 4s infinite;  /* Animation 2 */
 }
 
 .hidden{
@@ -162,15 +169,23 @@ button:hover {
   }
   
 
-@keyframes float {
-  0%, 100% {
+  @keyframes float {
+    0%, 100% {
       transform: translateY(0);
-  }
-  50% {
+    }
+    50% {
       transform: translateY(-20px);
+    }
+  }
+
+@keyframes flyUp {
+  0% {
+      transform: translateY(100vh);
+  }
+  100% {
+      transform: translateX(0);
   }
 }
-
 
 @media (max-width: 768px) {
   #envelope {
